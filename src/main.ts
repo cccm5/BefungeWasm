@@ -1,6 +1,6 @@
 import Binaryen = require('binaryen')
 
-function assert(x) {
+function assert(x: any) {
   if (!x) throw 'error!';
 }
 
