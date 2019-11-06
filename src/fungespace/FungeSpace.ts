@@ -1,6 +1,6 @@
-class Fungespace {
-    private static readonly WIDTH = 30;
-    private static readonly HEIGHT = 80;
+export class Fungespace {
+    public static readonly WIDTH = 30;
+    public static readonly HEIGHT = 80;
     private backing: Uint8Array;
     constructor(space: string){
         this.backing = new Uint8Array(Fungespace.WIDTH*Fungespace.HEIGHT);
@@ -16,11 +16,21 @@ class Fungespace {
             }
         }
     }
-    public get(x: number, y: number){
+    public get(x: number, y: number): number{
         return this.backing[x+(y*Fungespace.WIDTH)];
     }
 
     public set(x: number, y: number, i: number){
         this.backing[x+(y*Fungespace.WIDTH)] = i;
+    }
+
+    public repr(): string{
+        //TODO: Make this split rows by newlines
+        let out = "";
+        for(let c of this.backing){
+            out += String.fromCharCode(c);
+        }
+        return out;
+
     }
 }
