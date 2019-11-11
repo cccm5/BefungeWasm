@@ -1,3 +1,5 @@
+import {Graph} from '../Graph'
+
 export class Fungespace {
     public static readonly WIDTH = 30;
     public static readonly HEIGHT = 80;
